@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::resource('darys', 'daryController');
 Route::resource('particulars', 'particularController');
 Route::get('particular/{supplier_id}','particularController@create')->name('particulars.create');
 
@@ -31,6 +31,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 Route::get('admin', 'Admin\AdminController@index');
 Route::resource('admin/roles', 'Admin\RolesController');
 Route::resource('admin/permissions', 'Admin\PermissionsController');
@@ -45,7 +46,13 @@ Route::post('admin/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\P
 
 Route::resource('apple', 'appleController');
 Route::resource('box', 'boxController');
-Route::resource('ajaxproducts','ProductAjaxController');
+Route::get('/productAjax', 'productAjaxController@index');
 
-Route::resource('ajaxproducts','ProductAjaxController');
+Route::post('/productAjax/action', 'productAjaxController@action')->name('ajaxupload.action');
+Route::get('image-gallery', 'ImageGalleryController@index');
+
+Route::post('image-gallery', 'ImageGalleryController@upload');
+
+Route::delete('image-gallery/{id}', 'ImageGalleryController@destroy');
+
 

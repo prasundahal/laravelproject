@@ -1,147 +1,43 @@
 <?php
 
-         
-
 namespace App\Http\Controllers;
 
-          
-
-use App\Product;
-use DataTables;
 use Illuminate\Http\Request;
-
-use Yajra\DataTables\datatablesServiceProvider;
+use Validator;
 
 class ProductAjaxController extends Controller
 
 {
 
-    /**
-
-     * Display a listing of the resource.
-n
-     *
-
-     * @return \Illuminate\Http\Response
-
-     */
-
-    public function index(Request $request)
-
+    function index()
     {
-
-   
-
-        if ($request->ajax()) {
-
-            $data = Product::latest()->get();
-
-            return Datatables::of($data)
-
-                    ->addIndexColumn()
-
-                    ->addColumn('action', function($row){
-
-   
-
-                           $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editProduct">Edit</a>';
-
-   
-
-                           $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deleteProduct">Delete</a>';
-
-    
-
-                            return $btn;
-
-                    })
-
-                    ->rawColumns(['action'])
-
-                    ->make(true);
-
-        }
-
-      $ProductAjax = Product::all();
-
-      return view('productajax',compact('ProductAjax'));
-
+     return view('productAjax');
     }
 
-     
-
-    /**
-
-     * Store a newly created resource in storage.
-
-     *
-
-     * @param  \Illuminate\Http\Request  $request
-
-     * @return \Illuminate\Http\Response
-
-     */
-
-    public function store(Request $request)
-
+    function action(Request $request)
     {
-
-        Product::updateOrCreate(['id' => $request->product_id],
-
-                ['name' => $request->name, 'detail' => $request->detail]);        
-
-   
-
-        return response()->json(['success'=>'Product saved successfully.']);
-
+     $validation = Validator::make($request->all(), [
+      'select_file' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
+     ]);
+     if($validation->passes())
+     {
+      $image = $request->file('select_file');
+      $new_name = rand() . '.' . $image->getClientOriginalExtension();
+      $image->move(public_path('images'), $new_name);
+      return response()->json([
+       'message'   => 'Image Upload Successfully',
+       'uploaded_image' => '<img src="/images/'.$new_name.'" class="img-thumbnail" width="300" />',
+       'class_name'  => 'alert-success'
+      ]);
+     }
+     else
+     {
+      return response()->json([
+       'message'   => $validation->errors()->all(),
+       'uploaded_image' => '',
+       'class_name'  => 'alert-danger'
+      ]);
+     }
     }
-
-    /**
-
-     * Show the form for editing the specified resource.
-
-     *
-
-     * @param  \App\Product  $product
-
-     * @return \Illuminate\Http\Response
-
-     */
-
-    public function edit($id)
-
-    {
-
-        $product = Product::find($id);
-
-        return response()->json($product);
-
-    }
-
-  
-
-    /**
-
-     * Remove the specified resource from storage.
-
-     *
-
-     * @param  \App\Product  $product
-
-     * @return \Illuminate\Http\Response
-
-     */
-
-    public function destroy($id)
-
-    {
-
-        Product::find($id)->delete();
-
-     
-
-        return response()->json(['success'=>'Product deleted successfully.']);
-
-    }
-
 }
+?>

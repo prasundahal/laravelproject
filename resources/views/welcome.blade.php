@@ -1,147 +1,698 @@
-   
-   <style>
-  .button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-}
 
-.buttonC:hover {background-color: #f44336;border-radius: 12px;box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);font-size: 16px;}
-.buttonall:hover {background-color: #999900;border-radius: 12px;box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
-.button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-input[type=text], select {
-  width: 100%;
-font-size: 99px;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-body {
-  background-color: 0a290a;
-  text-align:center;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Royal Group  &mdash; Website of royal group </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
 
-</style>
-<html>
-<head>
-   
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
   
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<body> 
-   <p id="demo"></p>
-   <h1 style="color:Tomato; text-align: center;">CALCULATOR </h1>
-      <td><input type="button" value="🡄" onclick="back()"class="button buttonall"></button></td>
-      <td><input type="button" value="💾" onclick="myFunction()"class="button buttonall"></button></td>
+  <div class="site-wrap">
 
-      <td><input type="button" value="🡆" onclick="ford()"class="button buttonall"></button></td>
-      <input type="text" id="result"/>
-     
-    <table align="center"class="table table-borderless">
-    
-    <input type="button" value="Clear" onclick="clr()"class="button buttonC"></button>     
-    <input type="button" value="AC" onclick="clr()"class="button buttonC"></button>     
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+   
+    <div class="top-bar py-3 bg-light" id="home-section">
+      <div class="container">
+        <div class="row align-items-center">
          
-    
+          
+          
+        </div>
+      </div> 
+    </div>
 
-         <tr> 
-         <td><input type="button" value="7" onclick="dis('7')" class="button buttonall"></button></td>
-         <td><input type="button" value="8" onclick="dis('8')"class="button buttonall"></button></td>
-         <td><input type="button" value="9" onclick="dis('9')"class="button buttonall"></button></td>
-         <td><input type="button" value="+" onclick="dis('+')"class="button buttonall"></button></td>
-         </tr>
- <tr> 
-         <td><input type="button" value="4" onclick="dis('4')"class="button buttonall"></button></td>
-         <td><input type="button" value="5" onclick="dis('5')"class="button buttonall"></button></td>
-         <td><input type="button" value="6" onclick="dis('6')"class="button buttonall"></button></td>
-         <td><input type="button" value="-" onclick="dis('-')"class="button buttonall"></button></td>
-         <td><input type="button" value=")" onclick="dis(')')"class="button buttonall"></button></td>
-<br />
-       <tr> 
-         <td><input type="button" value="1" onclick="dis('1')"class="button buttonall"></button></td>
-         <td><input type="button" value="2" onclick="dis('2')"class="button buttonall"></button></td> 
-         <td><input type="button" value="3" onclick="dis('3')"class="button buttonall"></button></td> 
-         <td><input type="button" value="/" onclick="dis('/')"class="button buttonall"></button></td>
-         <td><input type="button" value="(" onclick="dis('(')"class="button buttonall"></button></td>
-        </tr> 
-     
-        
-         <br />
-         </tr> 
-         <tr> 
-         <td><input type="button" value="." onclick="dis('.')"class="button buttonall"></button></td> 
-         <td><input type="button" value="0" onclick="dis('0')"class="button buttonall"></button></td>
-         <td><input type="button" value="=" onclick="solve()"class="button buttonall"></button></td>
-         <td><input type="button" value="*" onclick="dis('*')"class="button buttonall"></button></td>
-<br />
-         </tr> 
-         
-         <tr>
-         <td><input type="button" value="sin" onclick="dis('Math.sin(')"class="button buttonall"></button></td>
-         <td><input type="button" value="cos" onclick="dis('Math.cos(')"class="button buttonall"></button></td>
-         <td><input type="button" value="tan" onclick="dis('Math.tan(')"class="button buttonall"></button></td>
-         <td><input type="button" value="𝝮" onclick="dis('3.14')"class="button buttonall"></button></td>
-         <td><input type="button" value="ℯ" onclick="dis('Math.exp(')"class="button buttonall"></button></td>
-         <td><input type="button" value="" onclick="dis('Math.exp(')"class="button buttonall"></button></td>
-        
-         <br />
-         </tr> 
+    <header class="site-navbar py-4 bg-white js-sticky-header site-navbar-target" role="banner">
 
-         
-         
-</table>
+      <div class="container">
+        <div class="row align-items-center">
+          
+          <div class="col-6 col-xl-2">
+            <h1 class="mb-0 site-logo"><a href="index.html" class="text-black mb-0">ROYAL GROUP<span class="text-primary">.</span> </a></h1>
+          </div>
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li><a href="#home-section" class="nav-link">Home</a></li>
+                <li><a href="#products-section" class="nav-link">New Products</a></li>
+                <li><a href="#about-section" class="nav-link">About Us</a></li>
+                <li><a href="#special-section" class="nav-link">Special</a></li>
+                <li><a href="#contact-section" class="nav-link">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a></div>
+
+        </div>
+      </div>
+      
+    </header>
 
   
-</body> 
-</html> 
+     
+    <div class="site-blocks-cover overlay" style="background-image: url(images/back1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
 
-<script> 
-      function dis(val) 
-      { 
-         document.getElementById("result").value+=val 
-      }  
-      function solve() 
-      { 
-         let x = document.getElementById("result").value 
-         let y = eval(x) 
-         document.getElementById("result").value = y 
-      }  
-      function clr() 
-      { 
-         document.getElementById("result").value = "" 
-      } 
+          <div class="col-md-12" data-aos="fade-up" data-aos-delay="400">
+                        
+            <div class="row mb-4">
+              <div class="col-md-7">
+                <h1>All Products</h1>
+                
+<div class="container">
 
-
-
-function myFunction() {
-   let z = document.getElementById("result").value = y
-   document.getElementById("demo").value = z
-    }
+               <ul class="nav flex-column">
+                  <li class="nav-item">
+                      <a href="{{ route('darys.index')}}">
+                         <img src="images/logod.jpg" class="rounded-circle" alt="Cowpic" width="75" height="75" a href="{{ route('darys.index')}}" data-toggle="tooltip" data-placement="right" title="Dairy Product">
+                       </a><br><br>
+                  </li>
 
 
-/*function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-}
-<div id="google_translate_element"></div>
+                             <li class="nav-item">
+                             <a href="{{ route('darys.index')}}">
+                         <img src="images/Pashmina.jpg" class="rounded-circle" alt="Pasmina " width="75" height="75" a href="{{ route('darys.index')}}" data-toggle="tooltip" data-placement="right" title="Pasmina Product">
+                           </a><br><br>
+                            </li>
+   
 
-*/
+
+                            <li class="nav-item">
+                                       <a href="{{ route('darys.index')}}">
+                                 <img src="http://127.0.0.1:8000/images/1569058247.jpeg" class="rounded-circle" alt="Cowpic" width="75" height="75" a href="{{ route('darys.index')}}">
+                                     </a><br><br>
+                                       </li>
 
 
-</script> 
+    
+  </ul>
+</div>
+                <div>
+                  
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+
+
+    
+    <div class="site-section" id="products-section">
+      <div class="container">
+        <div class="row mb-5 justify-content-center">
+          <div class="col-md-6 text-center">
+            <h3 class="section-sub-title">Our Products</h3>
+            <h2 class="section-title mb-3">New Products</h2>
+            <p>We offer you all kind of dary product in your door step.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-5">
+            <div class="product-item">
+              <figure>
+                <img src="images/dary1.jpg" alt="Image" class="img-fluid" ><a href="{{ route('darys.index')}}"></a>
+              </figure>
+              <div class="px-4">
+                <h3><a href="{{ route('darys.index')}}" ><span>Dairy Group</span></a></h3>
+                <div class="mb-3">
+                  
+                </div>
+                <p class="mb-4">All kind of Dairys are availabel </p>
+                <div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-5">
+            <div class="product-item">
+              <figure>
+                <img src="images/Pashmina.jpg" alt="Image" class="img-fluid">
+              </figure>
+              <div class="px-4">
+                <h3><a href="#">Pashmina Product</a></h3>
+                <div class="mb-3">
+                  
+                </div>
+                <p class="mb-4">Promote Nepali Product Our NEw product Can Blow your Mind</p>
+                <div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+         
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="site-blocks-cover inner-page-cover overlay get-notification"  style="background-image: url(images/hero_2.jpg); background-attachment: fixed;" data-aos="fade">
+      <div class="container">
+
+        <div class="row align-items-center justify-content-center">
+          <form class="col-md-7" method="post">
+            <h2>Get notified on each updates of the product .</h2>
+            <div class="d-flex mb-4">
+              <input type="text" class="form-control rounded-0" placeholder="Enter your email address">
+              <input type="submit" class="btn btn-white btn-outline-white rounded-0" value="Subscribe">
+            </div>
+            <p>Email will help you to be in touch with us.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="site-section bg-light">
+      <div class="container">
+        <div class="row mb-5 justify-content-center">
+          <div class="col-md-6 text-center">
+            <h3 class="section-sub-title">Awesome Products</h3>
+            <h2 class="section-title mb-3">Featured Products</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nostrum natus excepturi fuga ullam accusantium vel ut eveniet aut consequatur laboriosam ipsam.</p>
+          </div>
+        </div>
+        <div class="bg-white py-4 mb-4">
+          <div class="row mx-4 my-4 product-item-2 align-items-start">
+            <div class="col-md-6 mb-5 mb-md-0">
+              <img src="images/model_1_bg.jpg" alt="Image" class="img-fluid">
+            </div>
+           
+            <div class="col-md-5 ml-auto product-title-wrap">
+              <span class="number">01.</span>
+              <h3 class="text-black mb-4 font-weight-bold">About This Product</h3>
+              <p class="mb-4">Et tempora id nostrum saepe amet doloribus deserunt totam officiis cupiditate asperiores quasi accusantium voluptatum dolorem quae sapiente voluptatem ratione odio iure blanditiis earum fuga molestiae alias dicta perferendis inventore!</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta assumenda sed optio, error at?</p>
+              
+              <div class="mb-4"> 
+                <h3 class="text-black font-weight-bold h5">Price:</h3>
+                <div class="price"><del class="mr-2">$269.00</del> $69.00</div>
+              </div>
+              <p>
+                <a href="#" class="btn btn-black btn-outline-black rounded-0 d-block mb-2 mb-lg-0 d-lg-inline-block">View Details</a>
+                <a href="#" class="btn btn-black rounded-0 d-block d-lg-inline-block">Add To Cart</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white py-4">
+          <div class="row mx-4 my-4 product-item-2 align-items-start">
+            <div class="col-md-6 mb-5 mb-md-0 order-1 order-md-2">
+              <img src="images/product_1_bg.jpg" alt="Image" class="img-fluid">
+            </div>
+           
+            <div class="col-md-5 mr-auto product-title-wrap order-2 order-md-1">
+              <span class="number">02.</span>
+              <h3 class="text-black mb-4 font-weight-bold">About This Product</h3>
+              <p class="mb-4">Et tempora id nostrum saepe amet doloribus deserunt totam officiis cupiditate asperiores quasi accusantium voluptatum dolorem quae sapiente voluptatem ratione odio iure blanditiis earum fuga molestiae alias dicta perferendis inventore!</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta assumenda sed optio, error at?</p>
+              
+              <div class="mb-4"> 
+                <h3 class="text-black font-weight-bold h5">Price:</h3>
+                <div class="price"><del class="mr-2">$269.00</del> $69.00</div>
+              </div>
+              <p>
+                <a href="#" class="btn btn-black btn-outline-black rounded-0 d-block mb-2 mb-lg-0 d-lg-inline-block">View Details</a>
+                <a href="#" class="btn btn-black rounded-0 d-block d-lg-inline-block">Add To Cart</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="site-section" id="about-section">
+      <div class="container">
+        <div class="row align-items-lg-center">
+          <div class="col-md-8 mb-5 mb-lg-0 position-relative">
+            <img src="images/about_1.jpg" class="img-fluid" alt="Image">
+            <div class="experience">
+              <span class="year">Trusted Merchant</span>
+              <span class="caption">for 50 years</span>
+            </div>
+          </div>
+          <div class="col-md-3 ml-auto">
+            <h3 class="section-sub-title">Merchant Company</h3>
+            <h2 class="section-title mb-3">About Us</h2>
+            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui fuga ipsa, repellat blanditiis nihil, consectetur. Consequuntur eum inventore, rem maxime, nisi excepturi ipsam libero ratione adipisci alias eius vero vel!</p>
+            <p><a href="#" class="btn btn-black btn-black--hover rounded-0">Learn More</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="site-section border-bottom" id="team-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h3 class="section-sub-title">Team</h3>
+            <h2 class="section-title mb-3">Leadership</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
+            <div class="person text-center">
+              <img src="images/person_2.jpg" alt="Image" class="img-fluid rounded w-75 mb-3">
+              <h3>John Rooster</h3>
+              <p class="position text-muted">Co-Founder, President</p>
+              <p class="mb-4">Nisi at consequatur unde molestiae quidem provident voluptatum deleniti quo iste error eos est praesentium distinctio cupiditate tempore suscipit inventore deserunt tenetur.</p>
+              <ul class="ul-social-circle">
+                <li><a href="#"><span class="icon-facebook"></span></a></li>
+                <li><a href="#"><span class="icon-twitter"></span></a></li>
+                <li><a href="#"><span class="icon-linkedin"></span></a></li>
+                <li><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
+            <div class="person text-center">
+              <img src="images/person_3.jpg" alt="Image" class="img-fluid rounded w-75 mb-3">
+              <h3>Tom Sharp</h3>
+              <p class="position text-muted">Co-Founder, COO</p>
+              <p class="mb-4">Nisi at consequatur unde molestiae quidem provident voluptatum deleniti quo iste error eos est praesentium distinctio cupiditate tempore suscipit inventore deserunt tenetur.</p>
+              <ul class="ul-social-circle">
+                <li><a href="#"><span class="icon-facebook"></span></a></li>
+                <li><a href="#"><span class="icon-twitter"></span></a></li>
+                <li><a href="#"><span class="icon-linkedin"></span></a></li>
+                <li><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="300">
+            <div class="person text-center">
+              <img src="images/person_4.jpg" alt="Image" class="img-fluid rounded w-75 mb-3">
+              <h3>Winston Hodson</h3>
+              <p class="position text-muted">Marketing</p>
+              <p class="mb-4">Nisi at consequatur unde molestiae quidem provident voluptatum deleniti quo iste error eos est praesentium distinctio cupiditate tempore suscipit inventore deserunt tenetur.</p>
+              <ul class="ul-social-circle">
+                <li><a href="#"><span class="icon-facebook"></span></a></li>
+                <li><a href="#"><span class="icon-twitter"></span></a></li>
+                <li><a href="#"><span class="icon-linkedin"></span></a></li>
+                <li><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="site-blocks-cover overlay get-notification" id="special-section" style="background-image: url(images/hero_2.jpg); background-attachment: fixed; background-position: top;" data-aos="fade">
+      <div class="container">
+
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-7 text-center">
+            <h3 class="section-sub-title">Special Promo</h3>
+            <h3 class="section-title text-white mb-4">Summer Sale</h3>
+            <p class="mb-5 lead">Repudiandae nostrum natus excepturi fuga ullam accusantium vel ut eveniet aut consequatur laboriosam ipsam.</p>
+            
+            <div id="date-countdown" class="mb-5"></div>
+
+            <p><a href="#" class="btn btn-white btn-outline-white py-3 px-5 rounded-0 mb-lg-0 mb-2 d-block d-sm-inline-block">Shop Now</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="site-section bg-light" id="services-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h3 class="section-sub-title">Our Services</h3>
+            <h2 class="section-title mb-3">We Offer Services</h2>
+          </div>
+        </div>
+        <div class="row align-items-stretch">
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
+            <div class="unit-4 d-flex">
+              <div class="unit-4-icon mr-4"><span class="text-primary icon-pie_chart"></span></div>
+              <div>
+                <h3>Business Consulting</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="unit-4 d-flex">
+              <div class="unit-4-icon mr-4"><span class="text-primary icon-backspace"></span></div>
+              <div>
+                <h3>Market Analysis</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="unit-4 d-flex">
+              <div class="unit-4-icon mr-4"><span class="text-primary icon-av_timer"></span></div>
+              <div>
+                <h3>User Monitoring</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="unit-4 d-flex">
+              <div class="unit-4-icon mr-4"><span class="text-primary icon-beenhere"></span></div>
+              <div>
+                <h3>Seller Consulting</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="unit-4 d-flex">
+              <div class="unit-4-icon mr-4"><span class="text-primary icon-business_center"></span></div>
+              <div>
+                <h3>Financial Investment</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="unit-4 d-flex">
+              <div class="unit-4-icon mr-4"><span class="text-primary icon-cloud_done"></span></div>
+              <div>
+                <h3>Financial Management</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section testimonial-wrap" id="testimonials-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h3 class="section-sub-title">People Says</h3>
+            <h2 class="section-title mb-3">Testimonials</h2>
+          </div>
+        </div>
+      </div>
+      <div class="slide-one-item home-slider owl-carousel">
+          <div>
+            <div class="testimonial">
+              <figure class="mb-4 d-block align-items-center justify-content-center">
+                <div><img src="images/person_3.jpg" alt="Image" class="w-100 img-fluid mb-3"></div>
+              </figure>
+              <blockquote class="mb-3">
+                <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
+              </blockquote>
+              <p class="text-black"><strong>John Smith</strong></p>
+
+              
+            </div>
+          </div>
+          <div>
+            <div class="testimonial">
+              
+              <figure class="mb-4 d-block align-items-center justify-content-center">
+                <div><img src="images/person_2.jpg" alt="Image" class="w-100 img-fluid mb-3"></div>
+              </figure>
+
+              <blockquote class="mb-3">
+                <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
+              </blockquote>
+              
+              <p class="text-black"><strong>Robert Aguilar</strong></p>
+              
+              
+            </div>
+          </div>
+
+          <div>
+            <div class="testimonial">
+              <figure class="mb-4 d-block align-items-center justify-content-center">
+                <div><img src="images/person_4.jpg" alt="Image" class="w-100 img-fluid mb-3"></div>
+              </figure>
+              <blockquote class="mb-3">
+                <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
+              </blockquote>
+              <p class="text-black"><strong>Roger Spears</strong></p>
+
+              
+            </div>
+           
+          </div>
+
+          <div>
+            <div class="testimonial">
+              <figure class="mb-4 d-block align-items-center justify-content-center">
+                <div><img src="images/person_1.jpg" alt="Image" class="w-100 img-fluid mb-3"></div>
+              </figure>
+              <blockquote class="mb-3">
+                <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
+              </blockquote>
+              <p class="text-black"><strong>Kyle McDonald</strong></p>
+
+              
+            </div>
+
+          </div>
+
+        </div>
+    </div>
+
+    
+
+    <div class="site-section" id="blog-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h3 class="section-sub-title">Blog</h3>
+            <h2 class="section-title mb-3">Blog Posts</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+            <div class="h-entry">
+              <img src="images/model_1_bg.jpg" alt="Image" class="img-fluid">
+              <h2 class="font-size-regular"><a href="#" class="text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h2>
+              <div class="meta mb-4">Ham Brook <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="#">News</a></div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
+              <p><a href="#">Continue Reading...</a></p>
+            </div> 
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+            <div class="h-entry">
+              <img src="images/product_1_bg.jpg" alt="Image" class="img-fluid">
+              <h2 class="font-size-regular"><a href="#" class="text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h2>
+              <div class="meta mb-4">James Phelps <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="#">News</a></div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
+              <p><a href="#">Continue Reading...</a></p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+            <div class="h-entry">
+              <img src="images/model_5_bg.jpg" alt="Image" class="img-fluid">
+              <h2 class="font-size-regular"><a href="#" class="text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h2>
+              <div class="meta mb-4">James Phelps <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="#">News</a></div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
+              <p><a href="#">Continue Reading...</a></p>
+            </div> 
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+   
+
+
+    <div class="site-section bg-light" id="contact-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h3 class="section-sub-title">Contact Form</h3>
+            <h2 class="section-title mb-3">Get In Touch</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-7 mb-5">
+
+            
+
+            <form action="#" class="p-5 bg-white">
+              
+              <h2 class="h4 text-black mb-5">Contact Form</h2> 
+
+              <div class="row form-group">
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <label class="text-black" for="fname">First Name</label>
+                  <input type="text" id="fname" class="form-control rounded-0">
+                </div>
+                <div class="col-md-6">
+                  <label class="text-black" for="lname">Last Name</label>
+                  <input type="text" id="lname" class="form-control rounded-0">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="email">Email</label> 
+                  <input type="email" id="email" class="form-control rounded-0">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="subject">Subject</label> 
+                  <input type="subject" id="subject" class="form-control rounded-0">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="text-black" for="message">Message</label> 
+                  <textarea name="message" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Write your notes or questions here..."></textarea>
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <input type="submit" value="Send Message" class="btn btn-black rounded-0 py-3 px-4">
+                </div>
+              </div>
+
+  
+            </form>
+          </div>
+        
+        </div>
+        
+      </div>
+    </div>
+
+  
+    <footer class="site-footer bg-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-5">
+                <h2 class="footer-heading mb-4">About Us</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p>
+              </div>
+              <div class="col-md-3 ">
+                <h2 class="footer-heading mb-4">Quick Links</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Testimonials</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <h2 class="footer-heading mb-4">Follow Us</h2>
+                <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 ml-auto">
+            <h2 class="footer-heading mb-4">Featured Product</h2>
+            <a href="#"><img src="images/product_1_bg.jpg" alt="Image" class="img-fluid mb-3"></a>
+            <h4 class="h5">Leather Brown Shoe</h4>
+            <strong class="text-black mb-3 d-inline-block">$60.00</strong>
+            <p><a href="#" class="btn btn-black rounded-0">Add to Cart</a></p>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="border-top pt-5">
+            <p>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <i class="icon-heart" aria-hidden="true"></i> by <a href="https://" target="_blank" >Royal Group</a>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      </p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+
+  </div> <!-- .site-wrap -->
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+
+  <script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>

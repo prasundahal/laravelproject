@@ -7,16 +7,15 @@
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Dashboard</div>
+                    <div class="card-header">Admin </div>
 
                     <div class="card-body">
-                        
-<a href="{{ route('supliers.create') }}" class="button"><span>Add Suppliers </span></button></a>
-<a href="{{ route('supliers.index')}}" class="button"><span> View Supliers</span></button></a>
-<a href="{{ route('supliers.part') }}" class="button"><span>Add Particular </span></button></a>
-
-<a href="{{ route('particulars.index')}}" class="button"><span>View Particulars</span></button></a>
-  <br />  <br />
+                        </br></br>
+                                        <a href="{{ route('supliers.create') }}" class="button"><span>Add Suppliers </span></button></a>
+                                        <a href="{{ route('supliers.index')}}" class="button"><span> View Supliers</span></button></a></br></br></br>
+                                        <a href="{{ route('supliers.part') }}" class="button"><span>Add Particular </span></button></a>
+                                        <a href="{{ route('particulars.index')}}" class="button"><span>View Particulars</span></button></a>
+                                          <br />  <br />
                     </div>
                 </div>
             </div>

@@ -5,8 +5,8 @@
   border: none;
   color: #FFFFFF;
   text-align: center;
-  font-size: 18px;
-  padding: 18px;
+  font-size: 10px;
+  padding: 15px;
   width: 150px;
   transition: all 0.5s;
   cursor: pointer;
@@ -45,7 +45,7 @@
 
 <head>
 
-    <title>Laravel </title>
+    <title>Suplier Home page  </title>
 
 
 <meta charset="utf-8">
@@ -90,11 +90,21 @@
 <body>
 
     
-<div class="jumbotron text-center" style="margin-bottom:0">
+@extends('layouts.backend')
+
+@section('content')
+
+    <div class="container">
+        <div class="row">
+            @include('admin.sidebar')
+
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header">Suplier's Home Page</div>
  
-  <h2>  Home Page</h2>
   
-</div>
+  
+
 <div class="row">
 <div class="col-sm-12">
 
@@ -141,135 +151,29 @@
   </table>
 <div>
 </div>
-<br />  <br />
-<a href="{{ route('supliers.create') }}" class="button"><span>Add Suppliers </span></button></a>
-<a href="{{ route('supliers.index')}}" class="button"><span> View Supliers</span></button></a><br /><br /><br />
-<a href="{{ route('supliers.part') }}" class="button"><span>Add Particular </span></button></a>
-<a href="{{ route('particulars.index')}}" class="button"><span>View Particulars</span></button></a>
-<br />  <br />
+
 
 
 
    
-<div class="jumbotron text-center" style="margin-bottom:0">
-<p></p>
 </div>
 </div></div>
 
 
-
-<div class="modal fade" id="editTaskModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form id="frmEditTask">
-                <div class="modal-header">
-                    <h4 class="modal-title">
-Edit Suplier
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        <br /> 
-        @endif
-        <form method="post" action="{{ route('supliers.update', $suplier->id) }}">
-            @csrf
-           @method('PATCH')
-                    <button aria-hidden="true" class="close" data-dismiss="modal" type="button">
-                        ×
-                    </button>
+</div>
+</div>
                 </div>
-                <div class="modal-body">
-                    <div class="alert alert-danger" >
-                        <ul id="edit-task-errors">
-                        </ul>
-                    </div>
-                    <div class="form-group">
-                <label for="sellers_name">seller's Name:</label>
-                <input type="text" class="form-control" name="sellers_name" id="sellers_name" value={{ $suplier->sellers_name }} />
             </div>
-            <div class="form-group">
-                <label for="address">Address:</label>
-                <input type="text" class="form-control" name="address" id="address" value={{ $suplier->address }} />
-            </div>
-            <div class="form-group">
-                <label for="sellers_vatpan">sellers's VAT/PAN NO:</label>
-                <input type="text" class="form-control" name="sellers_vatpan" id="sellers_vatpan"value={{ $suplier->sellers_vatpan }} />
-            </div>
-      </div>
-                <div class="modal-footer">
-                    <input id="id" name="id" type="hidden" value="0">
-                        <input class="btn btn-default" data-dismiss="modal" type="button" value="Cancel">
-                            <button type="submit" class="btn btn-primary">Update</button>
-                        </input>
-                    </input>
-                </div>
-            </form>
         </div>
     </div>
+    <div class="jumbotron text-center" style="margin-bottom:0">
+<p></p>
+
 </div>
+@endsection
 
 </body></html>
-<script>
-  $(document).ready(function() {
-      $("#btn-info").click(function() {
-        
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            type: 'PUT',
-            url: '/supliers/' + $("#frmEditTask input[name=id]").val(),
-            data: {
-                sellers_name: $("#frmEditTask input[name=sellers_name]").val(),
-                sellers_vatpan: $("#frmEditTask input[name=sellers-vatpan]").val(),
-                address: $("#frmEditTask input[name=address]").val(),
-                
-            },
-            dataType: 'json',
-            success: function(data) {
-                $('#frmEditTask').trigger("reset");
-                $("#frmEditTask .close").click();
-                window.location.reload();
-            },
-            error: function(data) {
-                var errors = $.parseJSON(data.responseText);
-                $('#edit-task-errors').html('');
-                $.each(errors.messages, function(key, value) {
-                    $('#edit-task-errors').append('<li>' + value + '</li>');
-                });
-                $("#edit-error-bag").show();
-            }
-        });
-    });
 
-});
-
-
-  function editTaskForm($id) {
-    $.ajax({
-        type: 'GET',
-        url: '/supliers/' + id,
-        success: function(data) {
-            $("#edit-error-bag").hide();
-            $("#frmEditTask input[name=sellers_name]").val(data.sellers_name);
-            $("#frmEditTask input[name=address]").val(data.address); 
-            $("#frmEditTask input[name=sellers_vatpan]").val(data.sellers_vatpan);
-            $('#editTaskModal').modal('show');
-        },
-        error: function(data) {
-            console.log(data);
-        }
-    });
-}
-
-
-</script>
 
 
 
